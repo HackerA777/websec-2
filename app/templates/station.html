@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/media/style.css">
+<link rel="stylesheet" href="../static/media/station_style.css">
+<script src="../static/js/station.js"></script>
+<title>
+    Эй, транспорт
+</title>
+
+
+<body>
+    <div id="main_page" class="main_page">
+        <div class="header">
+            <img src="../static/media/img/bus-stop.png" class="l-logo"/>
+            <a class="h-text" href="/" style="text-decoration: none">Эй, транспорт</a>
+            <img src="../static/media/img/human.png" class="r-logo"/>
+            <select class="select_style" id="favorite_list" title="Избранные остановки"
+                    onchange="javascript:window.location=this.value" >
+                <option disabled selected>Избранные остановки</option>
+            </select>
+        </div>
+        <div class="station_content" id="station_content">
+            <div class="station_info" id="info_of_station">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

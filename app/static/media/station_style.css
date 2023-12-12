@@ -1,0 +1,142 @@
+.station_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    //background-color: rgba(165, 242, 165, 0.959);
+    background: url("./img/station_1920_1080.jpg");
+}
+
+.station_content::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.station_info {
+    position: absolute;
+    border-radius: 10px;
+    border: aquamarine;
+    background: rgba(127, 255, 212, 0.51);
+    text-align: center;
+    padding-top: 5px;
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: 85%;
+    overflow-y: auto;
+}
+
+table, th, td{
+    border: 1px solid;
+}
+
+.station_button {
+    width: 200px;
+    height: 40px;
+    background: #87bdf5;
+    font-size: 10pt;
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: center;
+    vertical-align: baseline;
+    padding-bottom: 0.8%;
+    transition: all 0.5s linear 0s;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+}
+
+.station_button:hover {
+    background-position: 0 -102%;
+    background-color: rgba(139, 186, 243, 0.78);
+}
+
+.tbody{
+    width: 80%;
+    display: table-row-group;
+    vertical-align: middle;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+
+.b-text_station{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+.b-text_station_route{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 100%;
+    padding-left: 10px;
+}
+a:link{
+    color: black;
+}
+.show_route{
+    padding-left: 20px;
+    text-align: left;
+}
+
+@media screen and (max-width: 500px){
+    .inputField{
+       width: 92%;
+   }
+   .operationField{
+       width: 30%;
+       margin-left: 35%;
+   }
+   .resultField{
+       min-height: 50px;
+       height: auto;
+   }
+   .header{
+       min-width: 200px;
+       min-height: 50px;
+       max-height: 75px;
+   }
+   .h-text{
+       font-size: 100%;
+   }
+   .station_content{
+       background: url("./img/station_600_1200.jpg");
+       margin-top: 55px;
+       min-height: 400px;
+       min-width: 200px;
+       max-height: 1150px;
+       height: 1150px;
+   }
+   .station_info{
+       top: 2%;
+       width: 90%;
+       left: 5%;
+       right: 5%;
+   }
+   .b-text_station{
+       font-size: 80%;
+   }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+   .station_content{
+       margin-top: 65px;
+       min-height: 400px;
+       min-width: 200px;
+       background: url("./img/station_1400_800.jpg");
+   }
+}
+
+@media (min-width: 900px) {
+   .h-text{
+       font-size: 160%;
+   }
+   .station_content{
+       margin-top: 9%;
+   }
+}

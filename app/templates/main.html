@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/media/style.css">
+<script src="../static/js/main.js"></script>
+<title>
+    Эй, транспорт
+</title>
+
+
+<body>
+    <div id="main_page" class="main_page">
+        <div class="header">
+            <img src="../static/media/img/bus-stop.png" class="l-logo"/>
+            <a class="h-text" href="/" style="text-decoration: none">Эй, транспорт</a>
+            <img src="../static/media/img/human.png" class="r-logo"/>
+            <select class="select_style" id="favorite_list" title="Избранные остановки"
+                    onchange="javascript:window.location=this.value" >
+                <option disabled selected>Избранные остановки</option>
+            </select>
+        </div>
+        <div class="content">
+<!--            <div class="choice-bar">-->
+<!--                <button class="button" onclick="show_search_bus_station()">Остановки</button>-->
+<!--                <button class="button" onclick="show_search_route()">Маршруты</button>-->
+<!--            </div>-->
+            <div id="search_bus_station" class="search_bus_station">
+                <label for="bus_station" class="b-text">Найдите интересующую остановку по названию или на карте города</label>
+                <input id="bus_station" class="inputSearch" placeholder="Введите название остановки" autofocus><p></p>
+                <button onclick="search_bus_station()">Поиск</button>
+                <!--<p onclick="show_search_bus_stations_on_map()" class="b-text">Выбрать на карте</p>-->
+            </div>
+            <div id="result_search" class="search_bus_station" style="padding-top: 1%">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

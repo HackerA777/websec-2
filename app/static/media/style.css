@@ -1,0 +1,269 @@
+.inputField {
+    width: 30%;
+    height: 40px;
+    background-color: transparent;
+    margin: 3%;
+    font-size: 15pt;
+    float: left;
+    border: 2px dashed rgb(255, 70, 70);;
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: center;
+}
+
+.operationField {
+    width: 20%;
+    height: 40px;
+    background-color: transparent;
+    margin: 3%;
+    font-size: 15pt;
+    float: left;
+    border: 2px dashed rgb(255, 70, 70);
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: center;
+}
+
+.resultField {
+    width: 88%;
+    max-width: 600px;
+    height: 120px;
+    margin: 3%;
+    font-size: 15pt;
+    background-color: transparent;
+    border: 2px dashed rgb(255, 70, 70);
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: left;
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    word-spacing: 2px;
+    line-height: normal;
+}
+
+.resultLinePrev{
+    width: 70%;
+    font-size: 15pt;
+    background-color: transparent;
+    border: 2px dashed transparent;
+    border-radius: 10px;
+    color: rgb(255, 140, 140);
+    text-align: left;
+    word-spacing: 2px;
+    line-height: normal;
+}
+
+.resultLineCur{
+    width: 70%;
+    font-size: 15pt;
+    background-color: transparent;
+    border: 2px dashed transparent;
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: left;
+    word-spacing: 2px;
+    line-height: normal;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+}
+
+.main_page{
+    max-width: 1920px;
+    max-height: 1080px;
+    height: 100%;
+    width: 100%;
+    min-width: 200px;
+    min-height: 400px;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url("./img/background_head.jpg");
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    font-style: italic;
+    vertical-align: middle;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.l-logo{
+    padding-top: 5px;
+    max-width: 7%;
+    max-height: 80%;
+    min-width: 7%;
+    min-height: 65%;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+
+.r-logo{
+    padding-top: 5px;
+    max-width: 7%;
+    max-height: 75%;
+    min-width: 7%;
+    min-height: 60%;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+
+.h-text{
+    vertical-align: -50%;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 140%;
+    color: #333b5e;
+    background: rgba(197, 215, 246, 0.43);
+    border: 2px solid rgb(108, 163, 206);
+    border-radius: 10%;
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    //background-color: rgba(165, 242, 165, 0.959);
+    background: url("./img/content_background_1920_1080.jpg");
+}
+
+.content::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.choice-bar{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.button{
+    width: 200px;
+    height: 40px;
+    background: #9dcaf5;
+    font-size: 15pt;
+    border: 2px dashed rgb(255, 70, 70);
+    border-radius: 10px;
+    color: rgb(255, 70, 70);
+    text-align: center;
+    vertical-align: baseline;
+    padding-bottom: 0.8%;
+    transition: all 0.5s linear 0s;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+}
+
+.button:hover {
+    background-position: 0 -102%;
+    background-color: rgba(139, 186, 243, 0.78);
+}
+
+.select_style{
+    right: 0;
+    margin-right: 20px;
+    margin-top: 3%;
+    position: absolute;
+    width: 20%;
+    height: 25%;
+    min-width: 90px;
+    min-height: 25px;
+    background: #b7d6f3;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.search_bus_station{
+    background: rgba(240, 248, 255, 0.76);
+    margin-left: 15%;
+    margin-right: 15%;
+    max-width: 70%;
+    max-height: 65%;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 5%;
+    padding-bottom: 10px;
+    overflow-y: auto;
+}
+
+.b-text{
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+.inputSearch{
+    width: 80%;
+    height: 27px;
+    line-height: 27px;
+    border: 1px solid #cdd9e0;
+    margin-top: 7px;
+    background: aliceblue;
+    border-radius: 14px;
+    padding-left: 7px;
+}
+
+@media screen and (max-width: 500px){
+    .inputField{
+       width: 92%;
+   }
+   .operationField{
+       width: 30%;
+       margin-left: 35%;
+   }
+   .resultField{
+       min-height: 50px;
+       height: auto;
+   }
+   .header{
+       text-align: left;
+       min-width: 300px;
+       min-height: 50px;
+       max-height: 75px;
+   }
+   .h-text{
+       font-size: 100%;
+   }
+   .content{
+       margin-top: 65px;
+       min-height: 400px;
+       min-width: 200px;
+       height: 600px;
+       background: url("./img/content_background_1000_800.jpg");
+   }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+   .content{
+       margin-top: 65px;
+       min-height: 400px;
+       min-width: 200px;
+       background: url("./img/content_background_1400_800.jpg");
+   }
+}
+
+@media (min-width: 900px) {
+   .h-text{
+       font-size: 160%;
+   }
+   .content{
+       margin-top: 9%;
+   }
+}
