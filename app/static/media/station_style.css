@@ -32,6 +32,8 @@
 
 table, th, td{
     border: 1px solid;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .station_button {
@@ -64,6 +66,7 @@ table, th, td{
     border-right-color: inherit;
     border-bottom-color: inherit;
     border-left-color: inherit;
+
 }
 
 .b-text_station{
