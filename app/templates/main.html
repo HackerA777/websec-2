@@ -2,6 +2,13 @@
 <html lang="ru">
 <meta charset="utf-8">
 <link rel="stylesheet" href="../static/media/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 <script src="../static/js/main.js"></script>
 <title>
     Эй, транспорт
@@ -32,6 +39,7 @@
             </div>
             <div id="result_search" class="search_bus_station" style="padding-top: 1%">
             </div>
+            <div id="map" class="map"></div>
         </div>
     </div>
 </body>

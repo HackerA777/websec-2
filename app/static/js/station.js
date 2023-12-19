@@ -79,17 +79,18 @@ async function load(){
                 return -1;
     }
     result = result['result'];
-    d.innerHTML += '<a class="b-text_station" id="title">' + result[0]['title'] + '</a>';
+
     let favorite = localStorage.getItem(result[0]['title'] + ' ' +
         result[0]['adjacentStreet'] + ' ' + result[0]['direction'])??null;
     if (favorite)
         d.innerHTML += '<a id="favorite" class="b-text_station" style="padding-right: 12px; ' +
         'right: 0; position: absolute; font-size: 80%" onclick="remove_favorite()">' +
-        'Удалить из избранное</a>';
+        'Удалить из избранного</a>';
     else
         d.innerHTML += '<a id="favorite" class="b-text_station" style="padding-right: 12px; ' +
         'right: 0; position: absolute; font-size: 80%" onclick="add_favorite()">' +
         'Добавить в избранное</a>';
+    d.innerHTML += '<br><a class="b-text_station" id="title">' + result[0]['title'] + '</a>';
     d.innerHTML += '<p class="b-text_station" style="font-size: 75%" id="direction">' + result[0]['adjacentStreet'] + ' ' + result[0]['direction'] + '</p>';
     d.innerHTML += '<div class="choice-bar">' +
         '                    <button class="station_button" onclick="show_bus_station()">Прибывающий транспорт</button>\n' +
@@ -113,20 +114,22 @@ async function load(){
     d.innerHTML += '<p class="b-text_station" style="font-size: 90%" >' +
         '<a href="https://yandex.ru/maps/51/samara/?ll=' + result[0]['longitude'] + '%2C' + result[0]['latitude'] +
         '&mode=search&sll=' + result[0]['longitude'] + '%2C' + result[0]['latitude'] +
-        '&text=' + result[0]['latitude'] + '%2C' + result[0]['longitude'] + '&z=16">' + 'Остановка на карте' + '</a></p>';
+        '&text=' + result[0]['latitude'] + '%2C' + result[0]['longitude'] + '&z=16">' + 'Остановка на Яндекс карте' + '</a></p>';
+    let _map = document.getElementById('map');
 
-    // render(
-    //    <MapContainer center={[50, 100]} zoom={13} scrollWheelZoom={false}>
-    //         <TileLayer
-    //     attribution='copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    //            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //         />
-    //         <Marker position={[50, 100]}>
-    //             <Popup>
-    //                 Popup for any custom information.
-    //             </Popup>
-    //         </Marker>
-    //     </MapContainer>)
+    var map_init = L.map(_map, {
+            center: [result[0]['latitude'], result[0]['longitude']],
+            zoom: 16
+        });
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map_init);
+        var marker = new L.Marker([result[0]['latitude'], result[0]['longitude']]);
+        marker.addTo(map_init)
+        L.Control.geocoder().addTo(map_init);
+        if (!navigator.geolocation) {
+            console.log("Your browser doesn't support geolocation feature!")
+        }
 }
 
 async function show_routes_from_station(){
@@ -211,41 +214,5 @@ async function show_routes_from_station(){
             }
         }
     }
-    // d.innerHTML += '<a class="b-text_station">' + result[0]['title'] + '</a>';
-    // d.innerHTML += '<p class="b-text_station" style="font-size: 75%">' + result[0]['adjacentStreet'] + ' ' + result[0]['direction'] + '</p>';
-    // d.innerHTML += '<div class="choice-bar">' +
-    //     '                    <button class="station_button" onclick="show_bus_station()">Прибывающий транспорт</button>\n' +
-    //     '                    <button class="station_button" onclick="show_routes_station()">Проходящие маршруты</button>\n' +
-    //     '                </div>';
-    // d.innerHTML += '<table id="tab">' +
-    //             '<thead><tr><td width="9%">Время, мин</td><td width="50%">Маршрут, модель ТС и госномер</td>' +
-    //     '<td>Текущее положение</td></tr></thead>';
-    // let t = document.getElementById("tab");
-    // let arrival = result[1]['arrival'];
-    // for(let i=0; i<arrival.length; i++) {
-    //     t.innerHTML += '<tbody class="tbody"><tr><td class="b-text_station">' + arrival[i]['time'] +
-    //         '</td><td><a class="b-text_station" href="/route?id=' + arrival[i]['KR_ID'] + '" style="font-size: 80%">'
-    //         + arrival[i]['number'] + ': '
-    //         + result[2][arrival[i]['KR_ID']]['from'] + ' -> ' + result[2][arrival[i]['KR_ID']]['to'] +'</a>' +
-    //         '<p class="b-text_station" style="font-size: 70%">' + arrival[i]['modelTitle'] + ' | ' + arrival[i]['stateNumber'] + '</p>' +
-    //         '</td><td><a class="b-text_station">' + Math.round(arrival[i]['remainingLength']) + ' м до ' + arrival[i]['nextStopName'] + '</a></td></tr>';
-    // }
-    // t.innerHTML += '</tbody>';
-    // d.innerHTML += '<p class="b-text_station" style="font-size: 90%" >' +
-    //     '<a href="https://yandex.ru/maps/51/samara/?ll=' + result[0]['longitude'] + '%2C' + result[0]['latitude'] +
-    //     '&mode=search&sll=' + result[0]['longitude'] + '%2C' + result[0]['latitude'] +
-    //     '&text=' + result[0]['latitude'] + '%2C' + result[0]['longitude'] + '&z=16">' + 'Остановка на карте' + '</a></p>';
-    //
-    // // render(
-    //    <MapContainer center={[50, 100]} zoom={13} scrollWheelZoom={false}>
-    //         <TileLayer
-    //     attribution='copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    //            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //         />
-    //         <Marker position={[50, 100]}>
-    //             <Popup>
-    //                 Popup for any custom information.
-    //             </Popup>
-    //         </Marker>
-    //     </MapContainer>)
+
 }

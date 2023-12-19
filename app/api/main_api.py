@@ -10,6 +10,20 @@ from flask import Blueprint
 api = Blueprint('api', __name__, template_folder='templates', url_prefix="/api")
 
 
+@api.route("/all_station", methods=['GET'])
+def get_all_station():
+    stations = requests.api.request('GET', 'https://tosamara.ru/api/v2/classifiers/stopsFullDB.xml')
+    stations = xmltodict.parse(stations.content)
+    stations = stations['stops']['stop']
+    result = []
+    for station in stations:
+        result.append({'KS_ID': station['KS_ID'], 'url': '/station?id='+station['KS_ID'], 'title': station['title'],
+                       'latitude': station['latitude'], 'longitude': station['longitude']})
+    if len(result) == 0:
+        return json.dumps({'message': 'Возникла ошибка'}), 404, {'Content-Type': 'application/json'}
+    return json.dumps({'result': result}), 200, {'Content-Type': 'application/json'}
+
+
 @api.route("/search_station", methods=['GET'])
 def search_station():
     get_param = str(flask.request.args.get('title'))
@@ -70,7 +84,7 @@ def get_station():
                         else:
                             _routes[route['KR_ID']] = {'from': route['stop'][0]['title'], 'to': route['direction']}
             result.append(_routes)
-            if not result:
+            if len(result) == 0:
                 return json.dumps({'message': 'Остановка не найдена'}), 404, {'Content-Type': 'application/json'}
             return json.dumps({'result': result}), 200, {'Content-Type': 'application/json'}
 

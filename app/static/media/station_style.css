@@ -26,8 +26,21 @@
     left: 10%;
     right: 10%;
     width: 80%;
-    height: 85%;
+    height: 65%;
     overflow-y: auto;
+}
+
+.map{
+    position: absolute;
+    border-radius: 10px;
+    border: aquamarine;
+    background: rgba(127, 255, 212, 0.51);
+    text-align: center;
+    top: 75%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: 20%;
 }
 
 table, th, td{
@@ -112,11 +125,21 @@ a:link{
        margin-top: 55px;
        min-height: 400px;
        min-width: 200px;
-       max-height: 1150px;
-       height: 1150px;
+       max-height: 950px;
+       height: 950px;
    }
    .station_info{
        top: 2%;
+       width: 90%;
+       left: 5%;
+       right: 5%;
+   }
+   .map{
+       margin-top: 0px;
+       top: 660px;
+       min-height: 100px;
+       max-height: 200px;
+       height: 200px;
        width: 90%;
        left: 5%;
        right: 5%;

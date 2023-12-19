@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     let l = document.getElementById('favorite_list');
     let keys = Object.keys(localStorage);
     for (const i in keys) {
-        console.log(localStorage.getItem(keys[i]));
+        // console.log(localStorage.getItem(keys[i]));
         l.innerHTML += '<option value="' + localStorage.getItem(keys[i]) + '">' + keys[i] + '</option>';
     }
     load();

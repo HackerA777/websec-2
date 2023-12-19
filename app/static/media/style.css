@@ -194,7 +194,7 @@
     margin-left: 15%;
     margin-right: 15%;
     max-width: 70%;
-    max-height: 65%;
+    max-height: 25%;
     padding-left: 4px;
     padding-right: 4px;
     text-align: center;
@@ -202,6 +202,19 @@
     padding-top: 5%;
     padding-bottom: 10px;
     overflow-y: auto;
+}
+
+.map{
+    position: relative;
+    border-radius: 10px;
+    border: aquamarine;
+    background: rgba(127, 255, 212, 0.51);
+    text-align: center;
+    padding-top: 5px;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    height: 45%;
 }
 
 .b-text{
